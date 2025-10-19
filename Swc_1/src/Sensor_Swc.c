@@ -1,16 +1,18 @@
-#include "Rte_Type.h" 
 #include "Sensor_Swc.h"
-
 /* Model step function */
-void Runn_act(void)
+void Get_temp_operation(enum Sensor mySensor,float64 *Sens_Level)
 {
-  enum Sensor mySensor = TemSens;
-  float64 TempLevel;
-  boolean tmpRead_1;
+  if (mySensor == TemSens)
+  {
+    *Sens_Level = 25.0;
+  }else if (mySensor == HumiditySens)
+  {
+    *Sens_Level = 60.0;
+  }else if (mySensor == PressionSens) 
+  {
+    *Sens_Level = 1013.25;
+  }
 
-  /* Inport generated from: '<Root>/Bus Element In3' */
-  (void)Rte_Read_Key_KeyLevel(&tmpRead_1);
-  Rte_Call_ReadSensorOp_OperationPort(Sensor_n,&TemSens)
 }
 
 /* Model initialize function */

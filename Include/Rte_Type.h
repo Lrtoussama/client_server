@@ -3,6 +3,11 @@
  * AUTOSAR RTE Type Definitions
  * Based on AUTOSAR Standard Types
  */
+enum Sensor {
+    TemSens,     // 0
+    HumiditySens,    // 1
+    PressionSens    // 2
+};
 
 /* Basic AUTOSAR types */
 typedef unsigned char boolean;
