@@ -1,6 +1,6 @@
 #include "Sensor_Swc.h"
 /* Model step function */
-void Get_temp_operation(enum Sensor mySensor,float64 *Sens_Level)
+void Get_temp_operation(Sensor mySensor,float64 *Sens_Level)
 {
   if (mySensor == TemSens)
   {
@@ -16,7 +16,7 @@ void Get_temp_operation(enum Sensor mySensor,float64 *Sens_Level)
 }
 
 /* Model initialize function */
-void actuators_swc_Init(void)
+void sensor_Swc_Init(void)
 {
   /* (no initialization code required) */
 }

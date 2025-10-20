@@ -3,23 +3,27 @@
  * AUTOSAR RTE Type Definitions
  * Based on AUTOSAR Standard Types
  */
-enum Sensor {
-    TemSens,     // 0
-    HumiditySens,    // 1
-    PressionSens    // 2
-};
+#ifndef RTE_TYPES
+#define RTE_TYPES
+
+typedef enum Sensor {
+    TemSens=0,     // 0
+    HumiditySens=1,    // 1
+    PressionSens=2    // 2
+} Sensor;
 
 /* Basic AUTOSAR types */
 typedef unsigned char boolean;
 typedef boolean Boolean;
 typedef double Double; 
+typedef double float64;
 
 /* AUTOSAR Standard Return Type */
 typedef unsigned char Std_ReturnType;
 #define NULL ((void*)0)
 #define TRUE ((Boolean)1)
 #define FALSE ((Boolean)0)
-#define float64 double
+//#define float64 double
 /* AUTOSAR Standard Return Values */
 #define RTE_E_OK                    ((Std_ReturnType)0x00)
 #define RTE_E_INVALID               ((Std_ReturnType)0x01)
@@ -30,4 +34,5 @@ typedef unsigned char Std_ReturnType;
 #define RTE_E_TRANSMIT_ACK         ((Std_ReturnType)0x06)
 #define RTE_E_NEVER_RECEIVED       ((Std_ReturnType)0x07)
 #define RTE_E_LOST_DATA            ((Std_ReturnType)0x08)
-#define RTE_E_MAX_AGE_EXCEEDED     ((Std_ReturnType)0x09) 
+#define RTE_E_MAX_AGE_EXCEEDED     ((Std_ReturnType)0x09)
+#endif /* RTE_TYPES */
